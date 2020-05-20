@@ -74,10 +74,10 @@ function draw() {
       console.log("Fuck yessss!");
       // test.textContent = `klappen`;
       test1.style.marginBottom = `${clapDetection / 2}rem`;
-      test2.style.marginBottom = `${clapDetection / 2 + 3}rem`;
-      test3.style.marginBottom = `${clapDetection / 2 + 6}rem`;
-      
-      
+      test2.style.marginBottom = `${clapDetection / 2}rem`;
+      test3.style.marginBottom = `${clapDetection / 2}rem`;
+
+
 
     }
 
