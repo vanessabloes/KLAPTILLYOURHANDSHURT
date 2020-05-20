@@ -14,9 +14,9 @@ var audioGrabArray = [];
 var sourceNames = [];
 
 function setup() {
-  createCanvas(512, 400);
-  textSize(32);
-  textAlign(LEFT, CENTER);
+  // createCanvas(512, 400);
+  // textSize(32);
+  // textAlign(LEFT, CENTER);
   //we will use a new p5AudioIn to enumerate the
   //audio devices. This won't connect to any output.
   audioGrab = new p5.AudioIn();
@@ -55,30 +55,41 @@ function getSourcesCallback(sourceList) {
 }
 
 function draw() {
-  background(200);
+  // background(200);
   for (var i = 0; i < numSources; i++) {
     var yPos = ((i + 1) / numSources) * height;
     var spectrum = fft[i].analyze()
     let clapDetection = spectrum.slice(1023);
 
-    //console.log(clapDetection);
+    // console.log(clapDetection);
 
 
 
-    if (clapDetection > 30) {
+    let test = document.querySelector(`.test`);
+
+    // test.style.margintop = `${clapDetection}rem`; 
+    // test.textContent = `niet klappen`;
+
+    if (clapDetection >= 1) {
       console.log("Fuck yessss!");
-    }
+      // test.textContent = `klappen`;
+      test.style.marginTop = `${clapDetection}rem`;
+    } 
+    // if (clapDetection < 1) {
+      // console.log("OOHNEEE");
+      // test.style.marginTop = `0`;
+    // }
+    
+    // stroke(0);
+    // line(0, ((i + 1) / numSources) * height, width, yPos);
+    // beginShape();
+    // vertex(0, ((i + 1) / numSources) * height);
 
-    stroke(0);
-    line(0, ((i + 1) / numSources) * height, width, yPos);
-    beginShape();
-    vertex(0, ((i + 1) / numSources) * height);
-
-    noStroke();
-    fill(0, 255, 255);
-    for (j = 0; j < spectrum.length; j++) {
-      vertex(j, map(spectrum[j], 0, 1023, yPos, 0));
-    }
+    // noStroke();
+    // fill(0, 255, 255);
+    // for (j = 0; j < spectrum.length; j++) {
+      // vertex(j, map(spectrum[j], 0, 1023, yPos, 0));
+    // }
     endShape();
 
     //without using HTTPS, Chrome cannot give us device names (such as
@@ -87,7 +98,7 @@ function draw() {
     //The first two are typically "default" and "mic"
     //(default usually is the mic)
 
-    fill(0);
-    text(sourceNames[i], 10, yPos - (0.5 * height) / numSources);
+    // fill(0);
+    // text(sourceNames[i], 10, yPos - (0.5 * height) / numSources);
   }
 }
