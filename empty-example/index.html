@@ -4,19 +4,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>p5.js example</title>
   <style>
     body {
       padding: 0;
       margin: 0;
     }
+
+    .gif {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .title {
+      font-size: 4rem;
+      margin-left: 3rem;
+      font-family: sans-serif;
+    }
+
+
+    .gifone {
+      margin-left: 15rem;
+
+    }
+
+    .trans {
+      transform: scaleX(-1);
+    }
   </style>
-  <p class="test">ls</p>
+
+
+  <h1 class="title">Lazzzzy Peeps</h1>
+  <h2>Clap your hands </h2>
+  <div class="container">
+    <img src="../assets/giphy.gif" alt="ja yuuuuw" class="gif" width="300">
+    <img src="../assets/buik.gif" alt="ja yuuuuw" class="gif gifone trans" width="600">
+  </div>
+
+
   <script src="../p5.js"></script>
   <script src="../addons/p5.sound.min.js"></script>
-  <script src="sprite.js"></script>
-  <script src="spriteMovement.js"></script>
-  <!-- <script src="sketch.js"></script> -->
+  <!-- <script src="sprite.js"></script> -->
+  <!-- <script src="spriteMovement.js"></script> -->
+
+
+  <script src="sketch.js"></script>
+  
 </head>
 
 <body>
