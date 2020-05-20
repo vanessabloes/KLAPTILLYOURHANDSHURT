@@ -29,16 +29,46 @@ function setup() {
     animation.push(img);
   }
 
-//  Animation
-    // W/H
-//  Frames
-    // X/Y
-  console.log(frames);
+  //  Animation
+  // W/H
+  //  Frames
+  // X/Y
+  //console.log(frames);
+
+  //console.log(animation.length);
+
+
+
+  frames.forEach((item, index) => {
+    //console.log(`${item} has index ${index}`);
+    //console.log(item);
+
+    horses.push(show(index * 75, animation.length, animation, item.position.x, item.position.y));
+
+  })
+
+
+  //horses[i].push(show(i * 75, animation.length, animation, img.position.x, img.position.y));
+
+  frames.forEach(img => {
+    xPositions = [];
+    xPositions.push(img.position.x);
+    return xPositions;
+  })
+
+  frames.forEach(img => {
+    yPositions = [];
+    yPositions.push(img.position.y);
+    return yPositions;
+  })
 
   for (let i = 0; i < 5; i++) {
-    horses.push[i] = show(i * 75, animation.length, animation, 0);
+    //horses[i] = new Sprite(animation, 0, i * 75, random(0.1, 0.4));
+
+    horses[i].push(show(i * 75, animation.length, animation, xPositions[i], yPositions[i]));
   }
 }
+console.log(horses);
 
 function show(index, len, animation, x, y) {
   let jah = floor(index) % len;
@@ -46,7 +76,7 @@ function show(index, len, animation, x, y) {
 }
 
 function animate(index, x, w) {
-    const speed = random(0.1, 0.4);
+  const speed = random(0.1, 0.4);
   index += speed;
   x += speed * 15;
 
