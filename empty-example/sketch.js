@@ -47,9 +47,9 @@ function getSourcesCallback(sourceList) {
     //otherwise we will ID the device with its
     //input array position
     if (sourceList[i].label) {
-      sourceNames[i] = 'device name: ' + sourceList[i].label;
+      sourceNames[i] = "device name: " + sourceList[i].label;
     } else {
-      sourceNames[i] = 'input array position: ' + i;
+      sourceNames[i] = "input array position: " + i;
     }
   }
 }
@@ -58,28 +58,29 @@ function draw() {
   // background(200);
   for (var i = 0; i < numSources; i++) {
     var yPos = ((i + 1) / numSources) * height;
-    var spectrum = fft[i].analyze()
+    var spectrum = fft[i].analyze();
     let clapDetection = spectrum.slice(1023);
 
     // console.log(clapDetection);
 
+    let test1 = document.querySelector(`.gif1`);
+    let test2 = document.querySelector(`.gif2`);
 
-
-    let test = document.querySelector(`.gif`);
-
-    // test.style.margintop = `${clapDetection}rem`; 
+    // test.style.margintop = `${clapDetection}rem`;
     // test.textContent = `niet klappen`;
 
-    if (clapDetection >= 1) {
+    if (clapDetection >= 0.1) {
       console.log("Fuck yessss!");
       // test.textContent = `klappen`;
-      test.style.marginBottom = `${clapDetection}rem`;
-    } 
+      test1.style.marginBottom = `${clapDetection / 2}rem`;
+      test2.style.marginBottom = `${clapDetection / 2}rem`;
+    }
+
     // if (clapDetection < 1) {
-      // console.log("OOHNEEE");
-      // test.style.marginTop = `0`;
+    // console.log("OOHNEEE");
+    // test.style.marginTop = `0`;
     // }
-    
+
     // stroke(0);
     // line(0, ((i + 1) / numSources) * height, width, yPos);
     // beginShape();
@@ -88,7 +89,7 @@ function draw() {
     // noStroke();
     // fill(0, 255, 255);
     // for (j = 0; j < spectrum.length; j++) {
-      // vertex(j, map(spectrum[j], 0, 1023, yPos, 0));
+    // vertex(j, map(spectrum[j], 0, 1023, yPos, 0));
     // }
     endShape();
 
