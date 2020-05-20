@@ -29,17 +29,24 @@ function setup() {
     animation.push(img);
   }
 
+//  Animation
+    // W/H
+//  Frames
+    // X/Y
+  console.log(frames);
+
   for (let i = 0; i < 5; i++) {
-    horses[i] = (animation, 0, i * 75, random(0.1, 0.4));
+    horses.push[i] = show(i * 75, animation.length, animation, 0);
   }
 }
 
 function show(index, len, animation, x, y) {
-  let index = floor(index) % len;
-  image(animation[index], x, y);
+  let jah = floor(index) % len;
+  image(animation[jah], x, y);
 }
 
-function animate(index, speed, x, w) {
+function animate(index, x, w) {
+    const speed = random(0.1, 0.4);
   index += speed;
   x += speed * 15;
 
