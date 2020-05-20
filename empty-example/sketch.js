@@ -59,7 +59,15 @@ function draw() {
   for (var i = 0; i < numSources; i++) {
     var yPos = ((i + 1) / numSources) * height;
     var spectrum = fft[i].analyze()
-    console.log(spectrum);
+    let clapDetection = spectrum.slice(1023);
+
+    //console.log(clapDetection);
+
+
+
+    if (clapDetection > 30) {
+      console.log("Fuck yessss!");
+    }
 
     stroke(0);
     line(0, ((i + 1) / numSources) * height, width, yPos);
