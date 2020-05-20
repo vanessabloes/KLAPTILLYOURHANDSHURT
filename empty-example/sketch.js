@@ -20,6 +20,8 @@ function setup() {
   //we will use a new p5AudioIn to enumerate the
   //audio devices. This won't connect to any output.
   audioGrab = new p5.AudioIn();
+  //analyzer = new p5.Amplitude();
+  //console.log(analyzer);
   audioGrab.getSources(function (data) {
     getSourcesCallback(data);
   });
@@ -32,12 +34,13 @@ function getSourcesCallback(sourceList) {
     audioGrabArray[i] = new p5.AudioIn();
     audioGrabArray[i].setSource(i);
     audioGrabArray[i].start();
-    console.log(audioGrabArray);
+    //console.log(audioGrabArray);
 
     //from the FFT example
+    //frequenties --> naar soundwaves
     fft[i] = new p5.FFT();
     fft[i].setInput(audioGrabArray[i]);
-    console.log(sourceList[i].label);
+    //console.log(sourceList[i].label);
 
     //see if the browser is allowing us
     //to access the name of the device
@@ -55,7 +58,8 @@ function draw() {
   background(200);
   for (var i = 0; i < numSources; i++) {
     var yPos = ((i + 1) / numSources) * height;
-    var spectrum = fft[i].analyze();
+    var spectrum = fft[i].analyze()
+    console.log(spectrum);
 
     stroke(0);
     line(0, ((i + 1) / numSources) * height, width, yPos);
