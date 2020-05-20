@@ -65,6 +65,7 @@ function draw() {
 
     let test1 = document.querySelector(`.gif1`);
     let test2 = document.querySelector(`.gif2`);
+    let test3 = document.querySelector(`.gif3`);
 
     // test.style.margintop = `${clapDetection}rem`;
     // test.textContent = `niet klappen`;
@@ -73,7 +74,11 @@ function draw() {
       console.log("Fuck yessss!");
       // test.textContent = `klappen`;
       test1.style.marginBottom = `${clapDetection / 2}rem`;
-      test2.style.marginBottom = `${clapDetection / 2}rem`;
+      test2.style.marginBottom = `${clapDetection / 2 + 3}rem`;
+      test3.style.marginBottom = `${clapDetection / 2 + 6}rem`;
+      
+      
+
     }
 
     // if (clapDetection < 1) {
