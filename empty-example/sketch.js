@@ -73,11 +73,11 @@ function draw() {
     if (clapDetection >= 0.1) {
       console.log("Fuck yessss!");
       // test.textContent = `klappen`;
-      test1.style.marginBottom = `${clapDetection / 2}rem`;
-      test2.style.marginBottom = `${clapDetection / 2}rem`;
-      test3.style.marginBottom = `${clapDetection / 2}rem`;
-
-
+      test1.style.marginBottom = `${clapDetection}rem`;
+      test2.style.marginBottom = `${clapDetection}rem`;
+      test3.style.marginBottom = `${clapDetection}rem`;
+      
+      
 
     }
 
